@@ -1,0 +1,44 @@
+{
+  "GlobalConfiguration": {
+
+    "BaseUrl": "http://localhost:5239"
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/ProductQuery/GetALlProducts",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/ProductQuery/GetALlProducts",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/ProductQuery/getproduct/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/ProductQuery/getproduct/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/ProductQuery/deleteproduct/{id}",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/ProductQuery/deleteproduct/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5072
+        }
+      ]
+    }
+  ]
+}
